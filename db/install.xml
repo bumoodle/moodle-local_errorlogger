@@ -6,14 +6,15 @@
   <TABLES>
     <TABLE NAME="errors" COMMENT="Stores records of PHP errors that have occurred in moodle">
       <FIELDS>
-        <FIELD NAME="id" TYPE="int" NOTNULL="true" SEQUENCE="true" NEXT="time"/>
+        <FIELD NAME="id" LENGTH="10" TYPE="int" NOTNULL="true" SEQUENCE="true" NEXT="time"/>
         <FIELD NAME="time" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="The time at which the given error occurred." PREVIOUS="id" NEXT="ip"/>
         <FIELD NAME="ip" TYPE="char" LENGTH="15" NOTNULL="false" SEQUENCE="false" COMMENT="The IP address to which the error occurred, if available" PREVIOUS="time" NEXT="userid"/>
         <FIELD NAME="userid" TYPE="int" LENGTH="20" NOTNULL="false" SEQUENCE="false" COMMENT="The user ID of the user for which the error occurred, if known" PREVIOUS="ip" NEXT="message"/>
         <FIELD NAME="message" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The message provided with the error" PREVIOUS="userid" NEXT="backtrace"/>
         <FIELD NAME="backtrace" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="The backtrace provided with the error, if available" PREVIOUS="message" NEXT="debuginfo"/>
         <FIELD NAME="debuginfo" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Any debug information provided by Moodle." PREVIOUS="backtrace" NEXT="errorcode"/>
-        <FIELD NAME="errorcode" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="debuginfo"/>
+        <FIELD NAME="errorcode" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="debuginfo" NEXT="reference"/>
+        <FIELD NAME="reference" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="errorcode"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>

@@ -25,7 +25,7 @@
  
 defined('MOODLE_INTERNAL') || die();
  
-$plugin->version   = 2012072802;
+$plugin->version   = 2012072803;
 $plugin->requires  = 2011070100; //requires Moodle 2.1+
 $plugin->component = 'local_errorlogger';
 $plugin->maturity  = MATURITY_ALPHA;

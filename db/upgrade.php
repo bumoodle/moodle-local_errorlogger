@@ -82,7 +82,7 @@ function xmldb_local_errorlogger_upgrade($oldversion) {
     }
 
 
-    if ($oldversion < 2012072802) {
+    if ($oldversion < 2012072803) {
 
         // Define field reference to be added to errors
         $table = new xmldb_table('errors');
@@ -94,7 +94,7 @@ function xmldb_local_errorlogger_upgrade($oldversion) {
         }
 
         // assignment savepoint reached
-        upgrade_plugin_savepoint(true, 2012072802, 'local', 'errorlogger');
+        upgrade_plugin_savepoint(true, 2012072803, 'local', 'errorlogger');
     }
 
 
